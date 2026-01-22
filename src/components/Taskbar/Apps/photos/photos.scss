@@ -1,0 +1,91 @@
+.photos-app {
+  height: 100%;
+  width: 100%;
+  background: #0e0e0e;
+  padding: 12px;
+  overflow: hidden;
+
+  .empty {
+    color: #666;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .photos-grid {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    overflow-y: auto;
+  overflow-x: hidden; 
+
+      &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+    img {
+      height: 120px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+      &:hover {
+        transform: scale(1.06);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+
+  .preview {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      max-height: 75%;
+      max-width: 90%;
+      border-radius: 12px;
+      margin-bottom: 14px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+
+      button {
+        padding: 6px 14px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        background: #222;
+        color: #eee;
+      }
+
+      .delete {
+        background: #dc2626;
+      }
+    }
+  }
+}

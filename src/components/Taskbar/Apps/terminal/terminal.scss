@@ -1,0 +1,14 @@
+.terminalapp {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+.terminalapp::-webkit-scrollbar {
+  width: 6px;
+}
+
+.terminalapp::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+}

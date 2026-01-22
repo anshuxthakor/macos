@@ -1,0 +1,181 @@
+/* ================================
+   MAC WINDOW CONTAINER
+================================ */
+.mac-window {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #1e1e1e;
+  color: white;
+
+  border-radius: 14px;
+  overflow: hidden;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 30px 60px rgba(0, 0, 0, 0.7);
+
+  &.minimized {
+    height: 40px !important;
+  }
+}
+
+/* ================================
+   TITLE BAR
+================================ */
+.mac-titlebar {
+  height: 40px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #2b2b2b;
+  position: relative;
+
+  cursor: grab;
+  user-select: none;
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+/* ================================
+   WINDOW TITLE
+================================ */
+.mac-title {
+  font-size: 13px;
+  opacity: 0.75;
+  pointer-events: none;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ================================
+   WINDOW BUTTON GROUP
+================================ */
+.mac-buttons {
+  position: absolute;
+  left: 10px;
+
+  display: flex;
+  gap: 2px;
+}
+
+/* ================================
+   WINDOW BUTTON (HIT AREA)
+================================ */
+.mac-btn {
+  width: 22px;   /* touch area */
+  height: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative; /* 🔑 icon anchors here */
+  cursor: pointer;
+}
+
+/* ================================
+   DOT
+================================ */
+.mac-btn::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+  display: block;
+
+  transition:
+    transform 0.15s ease,
+    filter 0.15s ease;
+}
+
+/* ================================
+   ICON (HIDDEN BY DEFAULT)
+================================ */
+.mac-btn::after {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%) scale(0.6);
+
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+
+  color: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
+}
+
+/* ================================
+   BUTTON COLORS
+================================ */
+.mac-btn.close::before {
+  background: #ff5f57;
+}
+
+.mac-btn.minimize::before {
+  background: #febc2e;
+}
+
+.mac-btn.zoom::before {
+  background: #28c840;
+}
+
+/* ================================
+   ICON SYMBOLS
+================================ */
+.mac-btn.close::after {
+  content: "×";
+}
+
+.mac-btn.minimize::after {
+  content: "–";
+}
+
+.mac-btn.zoom::after {
+  content: "+";
+}
+
+/* ================================
+   SHOW ICONS ON HOVER (macOS style)
+================================ */
+.mac-titlebar:hover .mac-btn::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* ================================
+   PRESS FEEDBACK
+================================ */
+.mac-btn:active::before {
+  transform: scale(0.9);
+}
+
+/* ================================
+   WINDOW CONTENT
+================================ */
+.mac-content {
+  flex: 1;
+  min-height: 0;  /* 🔑 critical for flex + iframe */
+  overflow: hidden;
+}

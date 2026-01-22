@@ -1,0 +1,172 @@
+.github-app {
+  height: 100%;
+  width: 100%;
+  padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  color: #eaeaea;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+}
+
+/* LOADING */
+.github-loading {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+}
+
+/* SHARED CARD */
+.card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+/* PROFILE CARD */
+.profile-card {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.profile-card img {
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.profile-info h2 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.handle {
+  font-size: 13px;
+  opacity: 0.65;
+}
+
+.bio {
+  font-size: 13px;
+  opacity: 0.8;
+  margin-top: 6px;
+}
+
+/* CLICKABLE PROFILE */
+.profile-card.clickable {
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.profile-card.clickable:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.profile-card.clickable:active {
+  transform: scale(0.995);
+}
+
+/* SCROLL CONTAINER (SOCIALS + REPOS) */
+.content-scroll {
+  flex: 1;
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  padding-right: 4px;
+}
+
+/* SOCIALS CARD */
+.socials-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.social-row {
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  transition:
+    background 0.15s ease,
+    transform 0.15s ease;
+}
+
+.social-row:hover {
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateX(2px);
+}
+
+/* REPO LIST (LOG STYLE) */
+.repos {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* SINGLE ROW */
+.repo-row {
+  padding: 12px 14px;
+  border-radius: 12px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    transform 0.15s ease;
+}
+
+.repo-row:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(2px);
+}
+
+.repo-name {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.repo-name strong {
+  font-weight: 500;
+}
+
+.repo-date {
+  font-size: 12px;
+  opacity: 0.55;
+  white-space: nowrap;
+}
+
+.content-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.content-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+}

@@ -1,0 +1,41 @@
+.logos {
+  display: flex;
+  gap: 5px;
+}
+
+.logo-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  display: grid;
+  place-items: center;
+
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  img {
+    width: 40px;
+    height: 40px;
+    pointer-events: none;
+  }
+}
+
+.logo-btn {
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  &:hover {
+    transform: translateY(-9px) scale(1.25);
+  }
+
+  &:hover + .logo-btn {
+    transform: translateY(-4px) scale(1.10);
+  }
+}
+
+/* LEFT neighbor */
+.logo-btn:has(+ .logo-btn:hover) {
+  transform: translateY(-4px) scale(1.10);
+}

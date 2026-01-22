@@ -1,0 +1,46 @@
+.navbar{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px
+}
+
+.apple{
+    height: 18px;
+}
+
+
+.left{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: rgb(196, 195, 195);
+    gap: 25px;
+} 
+
+.right{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    font-weight: 600;
+    color: rgb(196, 195, 195);
+    font-size: 15px;
+    gap: 10px;
+}   
+

@@ -1,0 +1,45 @@
+@mixin blur(){
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        inset 0 0 0 0.5px rgba(255,255,255,0.12),
+        0 10px 30px rgba(0,0,0,0.35);
+}
+
+.screen {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.navbar{
+    position: absolute;
+    z-index: 10;      // 👈 stays above windows
+    width: 100%;
+    height: 30px;
+    background: rgba(49, 43, 43, 0.6);
+    @include blur();
+}
+
+.desktop{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-image: url('../assets/images/Background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.taskbar {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    z-index: 1;
+    padding: 4px 8px;
+    border-radius: 10px;
+    @include blur()
+}
